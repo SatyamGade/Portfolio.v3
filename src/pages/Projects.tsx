@@ -71,7 +71,7 @@ const Projects = () => {
               </div>
               :
               webDevProjects.map((pro) => {
-                return <ProjectsCard key={pro.id} id={pro.id} title={pro.title} description={pro.description} imgPath={pro.imgPath} sourceLink={pro.sourceLink} deployedLink={pro.deployedLink} field={pro.field} />
+                return <ProjectsCard key={pro.id} id={pro.id} title={pro.title} description={pro.description} imgPath={pro.imgPath} technologyUsed={pro.technologyUsed} sourceLink={pro.sourceLink} deployedLink={pro.deployedLink} field={pro.field} />
               })
             :
             embeddedProjects.length === 0
@@ -81,7 +81,7 @@ const Projects = () => {
               </div>
               :
               embeddedProjects.map((pro) => {
-                return <ProjectsCard key={pro.id} id={pro.id} title={pro.title} description={pro.description} imgPath={pro.imgPath} sourceLink={pro.sourceLink} deployedLink={pro.deployedLink} field={pro.field} />
+                return <ProjectsCard key={pro.id} id={pro.id} title={pro.title} description={pro.description} imgPath={pro.imgPath} technologyUsed={pro.technologyUsed} sourceLink={pro.sourceLink} deployedLink={pro.deployedLink} field={pro.field} />
               })
         }
       </div>
