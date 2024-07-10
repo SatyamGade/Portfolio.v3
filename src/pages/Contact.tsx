@@ -30,7 +30,7 @@ const Contact = () => {
   return (
     <div className={`mb-24 py-2 px-4 md:py-4 md:px-8 lg:px-28 md:mt-20 mt-16 ${darkmode ? "text-Txt bg-bodyBg" : ""}`}>
       <h1 className={`text-center text-3xl md:text-4xl font-semibold`}>Contact</h1>
-      <form className={`mt-10 sm:w-80 w-11/12 py-1 px-4 sm:px-8 mx-auto shadow-cardShadow ${darkmode ? "text-txt bg-navbarBg" : ""}`}>
+      <form action="https://formsubmit.co/satyagade8055@gmail.com" method='POST' className={`mt-10 sm:w-80 w-11/12 py-1 px-4 sm:px-8 mx-auto shadow-cardShadow ${darkmode ? "text-txt bg-navbarBg" : ""}`}>
         <div className="mt-8">
           <input required className={`border-b w-full border-solid outline-none transition-all ease-in-out ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} type="text" placeholder="Name" name="name" value={info.name} onChange={handleChange} />
         </div>
