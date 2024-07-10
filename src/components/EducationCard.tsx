@@ -36,7 +36,7 @@ const EducationCard = ({ id, title, schoolName, degree, field, percentage, compl
     }
 
     return (
-        <div className={`${darkmode ? "bg-bodyBg text-Txt" : ""}`}>
+        <div className={`sm:w-1/3 ${darkmode ? "bg-bodyBg text-Txt" : ""}`}>
             <h2 className="text-2xl md:text-3xl font-medium mt-4">{title}</h2>
             <p className="mt-1 text-lg">School Name: {schoolName}</p>
             <p className="mt-1 text-lg">Degree: {degree}</p>

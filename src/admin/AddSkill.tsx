@@ -10,7 +10,6 @@ const AddSkill = () => {
 
   const [info, setInfo] = useState<SkillType>({
     title: "",
-    imgPath: "",
     field: ""
   });
   const darkmode = useRecoilValue(themeState);
@@ -29,7 +28,6 @@ const AddSkill = () => {
     try {
       axios.post('https://portfolio_backend.satyagade8055.workers.dev/api/auth/admin/skill', {
         title: info.title,
-        imgPath: info.imgPath,
         field: info.field
       }, {
         headers: {
@@ -40,7 +38,6 @@ const AddSkill = () => {
         .then(function (response) {
           setInfo({
             title: "",
-            imgPath: "",
             field: ""
           })
           toast.success(response.data.message);
@@ -62,9 +59,6 @@ const AddSkill = () => {
         </div>
         <div className="mt-8">
           <input required className={`border-b w-full border-solid outline-none transition-all ease-in-out ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} type="text" placeholder="Title" name="title" value={info.title} onChange={handleChange} />
-        </div>
-        <div>
-          <input required className={`border-b w-full border-solid outline-none transition-all ease-in-out mt-3 ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} type="text" placeholder="Image Path" name="imgPath" value={info.imgPath} onChange={handleChange} />
         </div>
         <div>
           <select required className={`border-b w-full border-solid outline-none transition-all ease-in-out mt-3 ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} name="field" id="field" value={info.field} onChange={(e)=>{

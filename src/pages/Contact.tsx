@@ -19,10 +19,10 @@ const Contact = () => {
     })
   }
 
-  useEffect(()=>{
-    if(darkmode){
+  useEffect(() => {
+    if (darkmode) {
       document.body.style.backgroundColor = '#121212'
-    }else{
+    } else {
       document.body.style.backgroundColor = 'white'
     }
   }, [darkmode])
@@ -32,12 +32,15 @@ const Contact = () => {
       <h1 className={`text-center text-3xl md:text-4xl font-semibold`}>Contact</h1>
       <form action="https://formsubmit.co/satyagade8055@gmail.com" method='POST' className={`mt-10 sm:w-80 w-11/12 py-1 px-4 sm:px-8 mx-auto shadow-cardShadow ${darkmode ? "text-txt bg-navbarBg" : ""}`}>
         <div className="mt-8">
+          <label htmlFor="name"></label>
           <input required className={`border-b w-full border-solid outline-none transition-all ease-in-out ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} type="text" placeholder="Name" name="name" value={info.name} onChange={handleChange} />
         </div>
         <div className="mt-4">
+          <label htmlFor="email"></label>
           <input required className={`border-b w-full border-solid outline-none transition-all ease-in-out ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} type="email" placeholder="Email" name="email" value={info.email} onChange={handleChange} />
         </div>
         <div className="mt-4">
+          <label htmlFor="message"></label>
           <textarea required className={`border-b w-full border-solid outline-none transition-all ease-in-out ${darkmode ? "border-borderClr bg-navbarBg text-Txt caret-Txt focus:border-Txt" : "focus:border-black border-gray-400"}`} placeholder="Message" name="message" value={info.message} onChange={(e) => {
             setInfo({
               ...info,

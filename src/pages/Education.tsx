@@ -50,7 +50,7 @@ const Education = () => {
   return (
     <div className={`py-2 px-4 md:py-4 md:px-8 lg:px-28 md:my-20 my-16 ${darkmode ? "text-Txt bg-bodyBg" : ""}`}>
       <h1 className={`text-center text-3xl md:text-4xl font-semibold`}>Education</h1>
-      <div className="mt-10 sm:flex justify-between">
+      <div className="mt-10 sm:flex justify-between gap-3">
         {
           allEducations.map((edu) => {
             return <EducationCard key={edu.id} id={edu.id} schoolName={edu.schoolName} title={edu.title} percentage={edu.percentage} completionYear={edu.completionYear} field={edu.field} degree={edu.degree} />

@@ -37,15 +37,15 @@ const ProjectsCard = ({ id, title, description, imgPath, sourceLink, deployedLin
   }
 
   return (
-    <div className={`md:w-3/12 w-3/4 p-2 shadow-cardShadow ${darkmode ? "bg-bodyBg text-Txt" : ""}`}>
+    <div className={`relative md:w-3/12 w-3/4 p-2 shadow-cardShadow ${darkmode ? "bg-bodyBg text-Txt" : ""}`}>
       <div className="mt-2">
         <img className="mx-auto w-40 h-40" src={imgPath} alt={`Image of ${title}`} />
       </div>
-      <div className="mt-1">
+      <div className="mt-2 mb-8">
         <h2 className="text-center text-2xl">{title}</h2>
-        <p className="text-lg">{description.slice(0, 50)} <Link to={`/project/${id}`}  className={`underline cursor-pointer ${darkmode ? "text-btnBg hover:text-linkHover" : "hover:text-cyan-500 text-cyan-700"}`}>Read more...</Link></p>
+        <p className="text-lg mt-2">{description.slice(0, 45)} <Link to={`/project/${id}`}  className={`underline cursor-pointer ${darkmode ? "text-btnBg hover:text-linkHover" : "hover:text-cyan-500 text-cyan-700"}`}>Read more</Link></p>
       </div>
-      <div className="flex justify-between mt-2">
+      <div className="flex justify-between mb-2 absolute bottom-0 left-0 right-0 px-2">
         <Link to={sourceLink} className={`underline ${darkmode ? "text-btnBg hover:text-linkHover" : "hover:text-cyan-500 text-cyan-700"}`}>Source Code</Link>
         <Link to={deployedLink} className={`underline ${darkmode ? "text-btnBg hover:text-linkHover" : "hover:text-cyan-500 text-cyan-700"}`}>Visit Website</Link>
       </div>

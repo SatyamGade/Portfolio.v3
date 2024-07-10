@@ -5,6 +5,8 @@ import { ProjectType } from "@satyagade/common-for-portfolio";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
+// bug in technologyUsed Type... something is wrong
 interface ProjectProps extends ProjectType {
     id: string
 }
@@ -25,6 +27,7 @@ const ProjectDetailPage = () => {
             })
                 .then(function (response) {
                     setProjectInfo(response.data);
+                    console.log(response.data);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -42,7 +45,7 @@ const ProjectDetailPage = () => {
         } else {
             document.body.style.backgroundColor = 'white'
         }
-    }, [darkmode, projectInfo])
+    }, [darkmode])
 
     return (
         <div className={`flex justify-between flex-col-reverse md:flex-row py-2 px-4 md:py-4 md:px-8 lg:px-28 md:my-20 my-16 ${darkmode ? "text-Txt bg-bodyBg" : ""}`}>
@@ -57,11 +60,7 @@ const ProjectDetailPage = () => {
                 </div>
                 <div className="mt-8">
                     <h2 className={`text-3xl md:text-4xl font-semibold`}>Technology Used:</h2>
-                    <p className="mt-2 text-lg sm:text-xl flex flex-wrap gap-4">
-                    {projectInfo?.technologyUsed.map((tech)=>{
-                        return <span>{tech}</span>
-                    })}
-                    </p>
+                    <div className="mt-2 text-lg sm:text-xl flex justify-between">{projectInfo?.technologyUsed}</div>
                 </div>
             </div>
             <div className="md:w-1/5 mb-4 md:mb-0">

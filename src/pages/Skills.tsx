@@ -65,11 +65,11 @@ const Skills = () => {
           showWebSkills
             ?
             webDevSkills.map((ski) => {
-              return <SkillCard key={ski.id} id={ski.id} title={ski.title} imgPath={ski.imgPath} field={ski.field} />
+              return <SkillCard key={ski.id} id={ski.id} title={ski.title} field={ski.field} />
             })
             :
             embeddedSkills.map((ski) => {
-              return <SkillCard key={ski.id} id={ski.id} title={ski.title} imgPath={ski.imgPath} field={ski.field} />
+              return <SkillCard key={ski.id} id={ski.id} title={ski.title} field={ski.field} />
             })
         }
       </div>

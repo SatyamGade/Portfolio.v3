@@ -9,7 +9,7 @@ interface SkillProps extends SkillType {
 }
 
 
-const SkillCard = ({ id, title, imgPath }: SkillProps) => {
+const SkillCard = ({ id, title }: SkillProps) => {
 
   const darkmode = useRecoilValue(themeState);
   const isloggedin = useRecoilValue(isLoggedIn);
@@ -37,13 +37,8 @@ const SkillCard = ({ id, title, imgPath }: SkillProps) => {
   }
 
   return (
-    <div className={`md:w-36 p-2 w-28 shadow-cardShadow ${darkmode ? "bg-bodyBg text-Txt" : ""}`}>
-      <div className="mt-1">
-        <img className="mx-auto w-32 h-28 sm:h-32" src={imgPath} alt={`Image of ${title}`} />
-      </div>
-      <div className="mt-1">
-        <h2 className="text-center text-2xl">{title}</h2>
-      </div>
+    <div className={`rounded-xl border ${darkmode ? "bg-bodyBg text-Txt" : "border-black"}`}>
+      <h2 className="py-2 px-4 text-center text-xl font-semibold">{title}</h2>
       {
         isloggedin &&
         <div className={`text-center mt-1 cursor-pointer transition ease-in-out active:transform active:scale-95 ${darkmode ? "bg-btnBg text-btnTxt" : "bg-cyan-500 text-white hover:bg-cyan-700"}`}>
